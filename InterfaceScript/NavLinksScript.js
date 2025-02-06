@@ -11,6 +11,7 @@ const navLinksArray = [
     "../Log/Log.html",
     "../Reports/Reports.html",
     "../Help/Help.html",
+    "../About/About.html",
 ];
 const navLinksNames = ["Dashboard", "Log", "Reports", "Help"];
 
