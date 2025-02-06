@@ -113,30 +113,50 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    fetch('https://log-spectrum-snort-server.vercel.app/')
+    const API_URL = 'https://log-spectrum-snort-server.vercel.app/';
+    
+    fetch(API_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+    })
     .then(response => {
+        if (response.status === 404) {
+            throw new Error('API endpoint not found. Please check the URL.');
+        }
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
     })
     .then(fileDataLines => {
+        if (!Array.isArray(fileDataLines)) {
+            throw new Error('Invalid data format received');
+        }
+        
         console.log('fileChanged event received');
         let parIndex = 0;
         let index = 1;
+        
         fileDataLines.forEach(line => {
-            const parsedData = parseLogLine(line, index);
-            if (parsedData) {
-                parsedFileLog[parIndex] = parsedData;
-                parIndex++;
-                index++;
+            if (line) {  // Only process non-empty lines
+                const parsedData = parseLogLine(line, index);
+                if (parsedData) {
+                    parsedFileLog[parIndex] = parsedData;
+                    parIndex++;
+                    index++;
+                }
             }
         });
+        
         console.log("Data processed");
         CreateCharts();
     })
     .catch(err => {
-        console.error('Error fetching file data:', err);
+        console.error('Error fetching file data:', err.message);
+        // You might want to add some UI feedback here
     });
 }
 // function ListenToFile() {
