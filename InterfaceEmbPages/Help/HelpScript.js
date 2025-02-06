@@ -126,7 +126,7 @@ function SendPrompt(prompt) {
     }
     GenerateUserChatSpan(prompt);
     const waitingSpan = GenerateWaitSign();
-    fetch('http://localhost:8014', {
+    fetch('https://log-spectrum-claude-api-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({prompt})
