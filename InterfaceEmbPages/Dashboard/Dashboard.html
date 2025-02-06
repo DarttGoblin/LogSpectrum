@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../../InterfaceMedia/Pictures/myLogo.ico">
+		<link rel="stylesheet" href="../../InterfaceStyle/NavStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/ResponsiveStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/SettingsStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/BotStyle.css"/>
+		<link rel="stylesheet" href="DashboardStyle.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>LogSpectrum - Dashboard</title>
+    </head>
+    <body><center>
+        <div id="bluredDiv"></div>
+        <nav>
+            <div id="navLogoCon">
+                <img id="logo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png">
+                <div id="usernameSpanCon">
+                    <!-- <i class="fa fa-arrow-left" id="logOut"></i> -->
+                    <!-- <span id="usernameSpan"></span> -->
+                    <i class="fa fa-robot" id="robot"></i>
+                    <i class="fa fa-gear" id="gear"></i>
+                </div>
+            </div>
+            <div id="navLinksCon">
+                <span class="navLinks active-link">DASHBOARD</span>
+                <span class="navLinks">LOG</span>
+                <span class="navLinks">REPORTS</span>
+                <span class="navLinks">HELP</span>
+            </div>
+            <div id="hrDiv"><hr><hr><hr></div>
+        </nav>
+        
+        <div id="dashboardPageSection">
+            <div class="graphContainers" id="graphsCon">
+                <!-- Line Chart -->
+                <div id="severityRoot">
+                    <button class="updateCharts" id="updateLineChart">Remove Duplicates &#8745;</button>
+                    <div id="severitygraphCon"><canvas id="severityGraph"></canvas></div>
+                </div>
+                <!-- Donut Chart -->
+                <div id="typesgraphCon"><canvas id="typesGraph"></canvas></div><br>
+            </div>
+            <div class="graphContainers" id="graphsConTwo">
+                <!-- Pie Chart -->
+                <div id="protocolgraphCon"><canvas id="protocolGraph"></canvas></div>
+                <!-- Bar Chart -->
+                <div>
+                    <button class="updateCharts" id="updateBarChart">Change Time Frame &#8987;</button>
+                    <div id="bargraphCon"><canvas id="barGraph"></canvas></div>
+                </div>
+            </div>
+            <div class="graphContainers" id="graphsConThree">
+                <div id="sourcePortGraphCon"><canvas id="sourcePortGraph"></canvas></div>
+                <div id="destinationPortGraphCon"><canvas id="destinationPortGraph"></canvas></div>
+            </div><br>
+            <div class="graphContainers" id="graphsConFour">
+                <div id="sourceIPGraphCon"><canvas id="sourceIPGraph"></canvas></div>
+                <div id="classificationGraphCon"><canvas id="classificationGraph"></canvas></div>
+                <div id="destinationIPGraphCon"><canvas id="destinationIPGraph"></canvas></div>
+            </div>
+            <div id="geoMap">
+                <!-- <i class="fas fa-map-marker markers"></i>
+                <i class="fas fa-map-marker markers"></i>
+                <i class="fas fa-map-marker markers"></i>
+                <i class="fas fa-map-marker markers"></i>
+                <i class="fas fa-map-marker markers"></i>
+                <i class="fas fa-map-marker markers"></i> -->
+            </div>
+        </div>
+
+        <div id="darkBgSetDiv"></div>
+        <div id="settingsCont">
+            <span id="closingSetArrow">&#8249;</span><br>
+            <div id="settingsDiv">
+                <img id="settingsLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png"><br>
+                <div id="settingsOptionsCont"></div>
+            </div>
+        </div>
+
+        <div id="darkBgBotDiv"></div>
+        <div id="chatContainer">
+            <i id="closingChatBot" class="fa fa-close"></i>
+            <div id="chatBox"></div>
+            <div class="user-input-container">
+                <input id="userInput" type="text" placeholder="Type your message here...">
+                <button id="arrowIcon"><i class="fa fa-arrow-up"></i></button>
+            </div>
+        </div>
+
+        <div id="darkBgNavDiv"></div>
+        <div id="navCont">
+            <img id="respLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png" alt="ls-logo"><br>
+            <span class="responsiveNavLinks">DASHBOARD</span><br>
+            <span class="responsiveNavLinks">LOG</span><br>
+            <span class="responsiveNavLinks">REPORTS</span><br>
+            <span class="responsiveNavLinks">HELP</span><br><br>
+            
+            <span class="responsiveNavLinks more">ACCOUNT</span>
+            <span class="responsiveNavLinks more">USERS</span>
+            <span class="responsiveNavLinks more">SETTINGS</span>
+            <span class="responsiveNavLinks more">LS.BOT</span>
+            <span class="responsiveNavLinks more">LOGOUT</span>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../../InterfaceScript/LoginScript.js"></script>
+        <script src="../../InterfaceScript/NavLinksScript.js"></script>
+        <script src="../../InterfaceScript/LogoutScript.js"></script>
+        <script src="../../InterfaceScript/SettingsScript.js"></script>
+        <script src="../../InterfaceScript/BotScript.js"></script>
+        <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+        <script src="ChartsScript.js"></script>
+        <script src="DashboardScript.js"></script>
+    </body>
+</html>

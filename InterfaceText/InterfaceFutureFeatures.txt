@@ -1,0 +1,9 @@
+GENERATE QR CODE
+UPLOAD PICTURES
+LANGUAGES
+SMS VERIFICATION
+EMAIL VERIFICATION
+NOTIFICATION
+THEMES
+SAVE AI ASSISTANT CHAT (hint: each chat is a table and messages are the rows)
+ARCHIVE AI ASSISTANT CHAT (hint: create a boolean attribute in each table, true is archived false is not)

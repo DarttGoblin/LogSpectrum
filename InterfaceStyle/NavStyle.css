@@ -1,0 +1,167 @@
+#respLogo {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: calc(50% - 100px / 2);
+}
+#displayUser {
+    font-size: 30px;
+    color: rgb(200, 200, 200);
+    margin: 0px 20px 0px 0px;
+    cursor: pointer;
+}
+#displayUser:hover {color: rgb(150, 20, 100)}
+#logOut {
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(200, 200, 200);
+}
+#logOut:hover {color: rgb(150, 20, 100)}
+#usernameSpanCon {margin: 50px 0px 0px 50px;}
+#robot {
+    font-size: 30px;
+    color: rgb(200, 200, 200);
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+}
+#robot:hover {color: rgb(150, 20, 100)}
+#gear {
+    font-size: 30px;
+    color: rgb(200, 200, 200);
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+}
+#gear:hover {color: rgb(150, 20, 100)}
+#usernameSpan {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(200, 200, 200);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+}
+#usernameSpan:hover {color: rgb(150, 20, 100);}
+#logo {
+    height: 200px;
+    width: 200px;
+}
+#navLinksCon {
+    display: block;
+    float: right;
+    margin: 46px 60px 0px 0px;
+}
+.responsiveNavLinks {cursor: pointer;}
+.responsiveNavLinks:hover {color: rgb(150, 20, 100);}
+.navLinks {
+    color: rgb(200, 200, 200);
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+}
+.navLinks:hover {color: rgb(150, 20, 100);}
+.active-link {color: rgb(150, 20, 100);}
+#logo {display: block;}
+#navLogoCon {
+    float: left;
+    display: flex;
+    margin-left: 60px;
+}
+nav {height: 200px; width: 100%;}
+
+#navCont {
+    padding: 20px;
+    line-height: 40px;
+    text-align: left;
+    height: 100%;
+    width: 0px;
+    top: 0;
+    right: 0px;
+    z-index: 9999;
+    display: none;
+    position: fixed;
+    color: rgb(200, 200, 200);
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    border-left: 2px solid rgb(150, 20, 100);
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: width 0.2s;
+}
+#darkBgNavDiv {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: none; 
+    position: fixed;
+}
+hr {
+    height: 8px;
+    width: 70px;
+    border: none;
+    background-color: white;
+}
+#hrDiv {
+    display: none;
+    width: fit-content;
+    float: right;
+    margin: 40px 80px 0px 0px;
+    cursor: pointer;
+}
+#hrDiv:hover hr {background-color: rgb(150, 20, 100);}
+.more {
+    color: rgb(150, 20, 100);
+    display: none;
+}
+
+@media only screen and (max-width: 1400px) {
+    #hrDiv {margin: 50px 60px 0px 0px; display: block;}
+    #navLinksCon {display: none;}
+    #navLogoCon {margin: 0px 30px;} 
+    hr {
+        margin: 5px;
+        height: 5px;
+        width: 40px;
+        border: none;
+        background-color: white;
+    } 
+}
+@media only screen and (max-width: 900px) {
+    #hrDiv {margin: 30px 40px 0px 0px;}
+    nav {height: 100px; width: 100%;}
+    #navLogoCon {margin: 0px 20px;}      
+    #logo {
+        height: 100px;
+        width: 100px;
+    }
+    #displayUser {
+        font-size: 20px;
+        margin: 0px 20px 0px 0px;
+    }
+    #logOut {font-size: 20px;}
+    #usernameSpanCon {margin: 30px 0px 0px 20px;}
+    #robot {
+        font-size: 20px;
+        top: -2px;
+    }
+    #gear {
+        font-size: 20px;
+        margin: 0px 20px 0px 20px;
+    }
+    #usernameSpan {
+        font-size: 20px;
+        margin: 0px 20px 0px 20px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    #displayUser, #logOut, #usernameSpanCon, #robot, #gear, #usernameSpan {display: none;}
+    .more {display: flex;}
+}

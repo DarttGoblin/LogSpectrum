@@ -1,0 +1,18 @@
+FOCUSED TASKS:
+    UPDATE HISTORY SERVER
+    REMOVE-USERS BACKEND
+
+    HOST PFE DATABASE
+    AI ALGORITHMS ANALYSE BUTTON
+
+NON FOCUSED TASKS:    
+    USERS CRUD
+
+INTERFACE DESCIPTION:
+    i have an interface that represents and monitor an intrusion detection system ,
+    Snort by displaying its log entries into a list, and graphs for visual description!
+    i have four pages, dashboard where the charts are, and the log page where the 
+    log entries line are displayed with control features, like filter, sort and search, 
+    also ai algorithms for analysis the help pages, where i use claude api to get 
+    answers for user questions about  network concepts, and i made the fourthpage 
+    called "report" page

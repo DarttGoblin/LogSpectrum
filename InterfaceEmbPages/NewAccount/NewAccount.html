@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../../InterfaceMedia/Pictures/myLogo.ico">
+		<link rel="stylesheet" href="../../InterfaceStyle/NavStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/SettingsStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/ResponsiveStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/BotStyle.css"/>
+		<link rel="stylesheet" href="NewAccountStyle.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Cyber Guardian - Add Account</title>
+    </head>
+    <body><center>
+        <div id="bluredDiv"></div>
+        <nav>
+            <div id="navLogoCon">
+                <img id="logo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png">
+                <div id="usernameSpanCon">
+                    <i class="fa fa-arrow-left" id="logOut"></i>
+                    <span id="usernameSpan"></span>
+                    <i class="fa fa-robot" id="robot"></i>
+                    <i class="fa fa-gear" id="gear"></i>
+                </div>
+            </div>
+            <div id="navLinksCon">
+                <span class="navLinks">DASHBOARD</span>
+                <span class="navLinks">LOG</span>
+                <span class="navLinks">REPORTS</span>
+                <span class="navLinks">HELP</span>
+            </div>
+            <div id="hrDiv"><hr><hr><hr></div>
+        </nav>
+
+        <form>
+            <input class="newAccInputs" type="text" placeholder="First Name" max="100"><br>
+            <input class="newAccInputs" type="text" placeholder="Last Name" max="100"><br>
+            <input class="newAccInputs" type="email" placeholder="Email" max="100"><br> <!--Send email for verification-->
+            <input class="newAccInputs" type="number" placeholder="Phone number" max="100"><br> <!--Send SMS for verification-->
+            <input class="newAccInputs" type="text" placeholder="Username" max="100"><br>
+            <input class="newAccInputs" type="password" placeholder="Password" max="100"><br>
+            <input class="newAccInputs" type="password" placeholder="Confirm Password" max="100"><br>
+            <div id="dropArea">
+                <p>Drop your profile image or click to select your file</p>
+                <input id="fileInput" type="file" accept=".jpg, .jpeg, .png" name="cv">
+                <div id="fileNameDisplay"></div>
+            </div>
+            <button class="newAccbuttons" type="button" id="submitBtn">Submit</button>
+            <button class="newAccbuttons" type="button" id="clearBtn">Clear</button><br>
+        </form>
+        <span id="failMsg"></span>
+
+        <div id="darkBgSetDiv"></div>
+        <div id="settingsCont">
+            <span id="closingSetArrow">&#8249;</span><br>
+            <div id="settingsDiv">
+                <img id="settingsLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png"><br>
+                <div id="settingsOptionsCont"></div>
+            </div>
+        </div>
+
+        <div id="darkBgBotDiv"></div>
+        <div id="chatContainer">
+            <i id="closingChatBot" class="fa fa-close"></i>
+            <div id="chatBox"></div>
+            <div>
+                <input id="userInput" type="text" placeholder="Type your message here...">
+                <button id="arrowIcon"><i class="fa fa-arrow-up"></i></button>
+            </div>
+        </div>
+
+        <div id="darkBgNavDiv"></div>
+        <div id="navCont">
+            <img id="respLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png" alt="ls-logo"><br>
+            <span class="responsiveNavLinks">DASHBOARD</span><br>
+            <span class="responsiveNavLinks">LOG</span><br>
+            <span class="responsiveNavLinks">REPORTS</span><br>
+            <span class="responsiveNavLinks">HELP</span><br><br>
+            
+            <span class="responsiveNavLinks more">ACCOUNT</span>
+            <span class="responsiveNavLinks more">USERS</span>
+            <span class="responsiveNavLinks more">SETTINGS</span>
+            <span class="responsiveNavLinks more">LS.BOT</span>
+            <span class="responsiveNavLinks more">LOGOUT</span>
+        </div>
+
+        <script src="../../InterfaceScript/LoginScript.js"></script>
+        <script src="../../InterfaceScript/NavLinksScript.js"></script>
+        <script src="../../InterfaceScript/LogoutScript.js"></script>
+        <script src="../../InterfaceScript/SettingsScript.js"></script>
+        <script src="../../InterfaceScript/BotScript.js"></script>
+        <script src="NewAccountScript.js"></script>
+    </body>
+</html>

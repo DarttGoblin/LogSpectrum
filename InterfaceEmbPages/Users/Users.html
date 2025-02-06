@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../../InterfaceMedia/Pictures/myLogo.ico">
+		<link rel="stylesheet" href="../../InterfaceStyle/NavStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/SettingsStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/ResponsiveStyle.css"/>
+		<link rel="stylesheet" href="../../InterfaceStyle/BotStyle.css"/>
+		<link rel="stylesheet" href="UsersStyle.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Cyber Guardian - Log</title>
+    </head>
+    <body><center>
+        <div id="bluredDiv"></div>
+        <nav>
+            <div id="navLogoCon">
+                <img id="logo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png">
+                <div id="usernameSpanCon">
+                    <i class="fa fa-arrow-left" id="logOut"></i>
+                    <span id="usernameSpan"></span>
+                    <i class="fa fa-robot" id="robot"></i>
+                    <i class="fa fa-gear" id="gear"></i>
+                </div>
+            </div>
+            <div id="navLinksCon">
+                <span class="navLinks">DASHBOARD</span>
+                <span class="navLinks">LOG</span>
+                <span class="navLinks">REPORTS</span>
+                <span class="navLinks">HELP</span>
+            </div>
+            <div id="hrDiv"><hr><hr><hr></div>
+        </nav>
+
+        <div id="allSupervisorsTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>email</th>
+                        <th>username</th>
+                        <th>admin</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="darkBgSetDiv"></div>
+        <div id="settingsCont">
+            <span id="closingSetArrow">&#8249;</span><br>
+            <div id="settingsDiv">
+                <img id="settingsLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png"><br>
+                <div id="settingsOptionsCont"></div>
+            </div>
+        </div>
+
+        <div id="darkBgBotDiv"></div>
+        <div id="chatContainer">
+            <i id="closingChatBot" class="fa fa-close"></i>
+            <div id="chatBox"></div>
+            <div>
+                <input id="userInput" type="text" placeholder="Type your message here...">
+                <button id="arrowIcon"><i class="fa fa-arrow-up"></i></button>
+            </div>
+        </div>
+
+        <div id="darkBgNavDiv"></div>
+        <div id="navCont">
+            <img id="respLogo" src="../../InterfaceMedia/Pictures/myLogo-removebg-preview.png" alt="ls-logo"><br>
+            <span class="responsiveNavLinks">DASHBOARD</span><br>
+            <span class="responsiveNavLinks">LOG</span><br>
+            <span class="responsiveNavLinks">REPORTS</span><br>
+            <span class="responsiveNavLinks">HELP</span><br><br>
+            
+            <span class="responsiveNavLinks more">ACCOUNT</span>
+            <span class="responsiveNavLinks more">USERS</span>
+            <span class="responsiveNavLinks more">SETTINGS</span>
+            <span class="responsiveNavLinks more">LS.BOT</span>
+            <span class="responsiveNavLinks more">LOGOUT</span>
+        </div>
+
+        <script src="../../InterfaceScript/LoginScript.js"></script>
+        <script src="../../InterfaceScript/NavLinksScript.js"></script>
+        <script src="../../InterfaceScript/LogoutScript.js"></script>
+        <script src="../../InterfaceScript/SettingsScript.js"></script>
+        <script src="../../InterfaceScript/ResponseScript.js"></script>
+        <script src="../../InterfaceScript/BotScript.js"></script>
+        <script src="UsersScript.js"></script>
+    </body>
+</html>
