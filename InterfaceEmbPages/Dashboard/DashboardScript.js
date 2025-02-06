@@ -113,7 +113,7 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    fetch('https://log-spectrum-snort-server-ecru.vercel.app/, {
+    fetch('https://log-spectrum-snort-server-ecru.vercel.app/', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
