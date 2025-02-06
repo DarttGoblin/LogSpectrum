@@ -33,7 +33,7 @@ analyseBtn.onclick = AnalyseLog;
 function AnalyseLog() {
     analyseBtn.textContent = 'Analysing...';
     analyseBtn.disabled = true;
-    fetch('http://localhost:8015', {
+    fetch('https://log-spectrum-analyse-log-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({parsedFileLog})
