@@ -113,11 +113,17 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    const socket = io('http://localhost:8011');
-    socket.on('fileChanged', (fileDataLines) => {
+    fetch('http://localhost:8011')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(fileDataLines => {
         console.log('fileChanged event received');
-        var parIndex = 0;
-        var index = 1;
+        let parIndex = 0;
+        let index = 1;
         fileDataLines.forEach(line => {
             const parsedData = parseLogLine(line, index);
             if (parsedData) {
@@ -128,10 +134,31 @@ function ListenToFile() {
         });
         console.log("Data processed");
         CreateCharts();
+    })
+    .catch(err => {
+        console.error('Error fetching file data:', err);
     });
-    socket.on('connect', () => {console.log('Connected to server');});
-    socket.on('disconnect', () => {console.log('Disconnected from server');});
 }
+// function ListenToFile() {
+//     const socket = io('http://localhost:8011');
+//     socket.on('fileChanged', (fileDataLines) => {
+//         console.log('fileChanged event received');
+//         var parIndex = 0;
+//         var index = 1;
+//         fileDataLines.forEach(line => {
+//             const parsedData = parseLogLine(line, index);
+//             if (parsedData) {
+//                 parsedFileLog[parIndex] = parsedData;
+//                 parIndex++;
+//                 index++;
+//             }
+//         });
+//         console.log("Data processed");
+//         CreateCharts();
+//     });
+//     socket.on('connect', () => {console.log('Connected to server');});
+//     socket.on('disconnect', () => {console.log('Disconnected from server');});
+// }
 function parseLogLine(logLine, index) {
     const logPattern = /^(\d{2}\/\d{2}-\d{2}:\d{2}:\d{2}\.\d{6})\s+\[\*\*\]\s+\[\d+:\d+:\d+\]\s+(.+?)\s+\[\*\*\]\s+\[Classification:\s+(.+?)\]\s+\[Priority:\s+(\d+)\]\s+\{(\w+)\}\s+(\d{1,3}(?:\.\d{1,3}){3}):(\d+)\s+->\s+(\d{1,3}(?:\.\d{1,3}){3}):(\d+)/;
     const match = logLine.match(logPattern);
