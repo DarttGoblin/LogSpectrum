@@ -11,7 +11,7 @@ ListenToFile();
 ReadUserLog();
 
 function ListenToFile() {
-    fetch('http://localhost:8011/')
+    fetch('https://log-spectrum-snort-server-ecru.vercel.app/')
         .then(response => response.json())
         .then(fileDataLines => {
             var index = 1;
