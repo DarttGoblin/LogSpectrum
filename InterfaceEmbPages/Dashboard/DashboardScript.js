@@ -115,10 +115,7 @@ function initialize() {
 function ListenToFile() {
     fetch('https://log-spectrum-snort-server-ecru.vercel.app/', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include'
+        headers: {'Content-Type': 'application/json'}
     })
     .then(response => {
         if (response.status === 404) {
