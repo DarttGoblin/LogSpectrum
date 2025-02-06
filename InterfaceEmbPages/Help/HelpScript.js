@@ -148,7 +148,7 @@ function SendPrompt(prompt) {
     .catch(error => {
         chatCon.removeChild(waitingSpan);
         console.log(error);
-        alert("An error has been occured! Try again later.");
+        alert("The server is currently down because we've reached the usage limits of the API's free plan. Please try again later.");
         searchEng.disabled = false;
     });
 }
