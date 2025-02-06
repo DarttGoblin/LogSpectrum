@@ -47,7 +47,7 @@ CreateSettings();
 gear.onclick = function() {SettingsState("block", "300px", 50);}
 closingSetArrow.onclick = function() {SettingsState("none", "0px", 0);}
 darkBgSetDiv.onclick = function() {SettingsState("none", "0px", 0);}
-UsernameSpan.onclick = function() {window.location.href = "../Account/Account.html";}
+// UsernameSpan.onclick = function() {window.location.href = "../Account/Account.html";}
 
 function UpdateDivState() {
     if (!updateBool) {
