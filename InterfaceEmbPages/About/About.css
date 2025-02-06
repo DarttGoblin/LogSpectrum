@@ -60,6 +60,7 @@ body {
     color: white;
     font-weight: 700;
     border: none;
+    margin-bottom: 100px;
 }
 
 .read-report:hover {
