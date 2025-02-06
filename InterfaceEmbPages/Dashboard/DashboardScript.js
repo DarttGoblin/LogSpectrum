@@ -113,7 +113,7 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    fetch('http://localhost:8011')
+    fetch('https://log-spectrum-snort-server.vercel.app/')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
