@@ -113,10 +113,7 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    fetch('https://log-spectrum-snort-server-ecru.vercel.app/', {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    })
+    fetch('https://log-spectrum-snort-server-ecru.vercel.app/', {method: 'GET'})
     .then(response => {
         if (response.status === 404) {
             throw new Error('API endpoint not found. Please check the URL.');
