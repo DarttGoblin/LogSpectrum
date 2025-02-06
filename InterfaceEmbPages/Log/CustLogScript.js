@@ -149,7 +149,7 @@ function DownloadFile() {
     }
     downloadSelectSpan.disabled = true;
     downloadSelectSpan.textContent = 'Downloading...';
-    fetch('http://localhost:8013', {
+    fetch('https://log-spectrum-download-log-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({parsedFileLog, fileType})
