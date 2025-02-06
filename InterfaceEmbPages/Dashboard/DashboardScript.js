@@ -113,9 +113,7 @@ function initialize() {
     ListenToFile();
 }
 function ListenToFile() {
-    const API_URL = 'https://log-spectrum-snort-server.vercel.app/';
-    
-    fetch(API_URL, {
+    fetch('https://log-spectrum-snort-git-f7d110-yassinebazgourgmailcoms-projects.vercel.app/, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
