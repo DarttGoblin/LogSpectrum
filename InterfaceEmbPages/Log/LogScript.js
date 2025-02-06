@@ -11,28 +11,50 @@ ListenToFile();
 ReadUserLog();
 
 function ListenToFile() {
-    const socket = io('http://localhost:8011');
-    socket.on('fileChanged', (fileDataLines) => {
-        var index = 1;
-        snortLogFiletbody.innerHTML = '';
-        logLines = fileDataLines;
-        fileDataLines.forEach(line => {
-            const parsedData = ParseLogLine(line, index);
-            if (parsedData) {
-                snortLogFiletbody.appendChild(CreateSnortFileTableRow(parsedData));
-                parsedFileLog.push(parsedData);
-                index++;
-            }
-            else {
-                HandleUnmatchedLogLine(line);
-                nonParsedFileLog.push(line);
-            }
-        });
-        localStorage.setItem('nonParsedFileLog', JSON.stringify(nonParsedFileLog));
-    });
-    socket.on('connect', () => {console.log('Connected to server');});
-    socket.on('disconnect', () => {console.log('Disconnected from server');});
+    fetch('http://localhost:8011/')
+        .then(response => response.json())
+        .then(fileDataLines => {
+            var index = 1;
+            snortLogFiletbody.innerHTML = '';
+            logLines = fileDataLines;
+            fileDataLines.forEach(line => {
+                const parsedData = ParseLogLine(line, index);
+                if (parsedData) {
+                    snortLogFiletbody.appendChild(CreateSnortFileTableRow(parsedData));
+                    parsedFileLog.push(parsedData);
+                    index++;
+                } else {
+                    HandleUnmatchedLogLine(line);
+                    nonParsedFileLog.push(line);
+                }
+            });
+            localStorage.setItem('nonParsedFileLog', JSON.stringify(nonParsedFileLog));
+        })
+        .catch(error => console.error('Error fetching log data:', error));
 }
+// function ListenToFile() {
+//     const socket = io('http://localhost:8011');
+//     socket.on('fileChanged', (fileDataLines) => {
+//         var index = 1;
+//         snortLogFiletbody.innerHTML = '';
+//         logLines = fileDataLines;
+//         fileDataLines.forEach(line => {
+//             const parsedData = ParseLogLine(line, index);
+//             if (parsedData) {
+//                 snortLogFiletbody.appendChild(CreateSnortFileTableRow(parsedData));
+//                 parsedFileLog.push(parsedData);
+//                 index++;
+//             }
+//             else {
+//                 HandleUnmatchedLogLine(line);
+//                 nonParsedFileLog.push(line);
+//             }
+//         });
+//         localStorage.setItem('nonParsedFileLog', JSON.stringify(nonParsedFileLog));
+//     });
+//     socket.on('connect', () => {console.log('Connected to server');});
+//     socket.on('disconnect', () => {console.log('Disconnected from server');});
+// }
 function ReadUserLog() {
     fetch('http://localhost:8010', {
         method: 'POST',
