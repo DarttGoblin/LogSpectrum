@@ -135,7 +135,7 @@ hr {
     } 
 }
 @media only screen and (max-width: 900px) {
-    #hrDiv {margin: 30px 40px 0px 0px;}
+    #hrDiv {margin: 20px 30px 0px 0px;}
     nav {height: 100px; width: 100%;}
     #navLogoCon {margin: 0px 20px;}      
     #logo {
