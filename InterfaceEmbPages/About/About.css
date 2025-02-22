@@ -67,6 +67,14 @@ body {
     background-color: rgb(88, 41, 132);
 }
 
+.professor {
+    color: rgb(58, 130, 203);
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.5s;
+}
+
 @media only screen and (max-width: 1200px) {
     .about-section {
         margin-top: 50px;
